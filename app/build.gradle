@@ -27,3 +27,15 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
 }
 
+gradlePlugin{
+plugins {
+  id "org.sonarqube" version "3.3"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "cooperative0zero_Project"
+    property "sonar.organization", "cooperative0zero"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+  }
