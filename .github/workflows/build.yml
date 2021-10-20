@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "master"
+      - master
   pull_request:
       types: [opened, synchronize, reopened]
 name: Main Workflow
@@ -18,7 +19,7 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v1.6
       with:
-       projectBaseDir:
+       projectBaseDir: app
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
