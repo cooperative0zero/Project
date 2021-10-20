@@ -1,5 +1,6 @@
 plugins {
     id 'org.sonarqube'
+    id "jacoco"
 }
 apply plugin: 'com.android.application'
 
@@ -25,8 +26,12 @@ sonarqube {
         property "sonar.projectKey", "cooperative0zero_Project"
         property "sonar.organization", "cooperative0zero"
         property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/jacoco/test/jacocoTestReport.xml"
     }
 }
+reports {
+        xml.isEnabled = true
+    }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
