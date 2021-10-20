@@ -23,10 +23,11 @@ android {
 }
 sonarqube {
     properties {
+        property "sonar.java.coveragePlugin", "jacoco"
         property "sonar.projectKey", "cooperative0zero_Project"
         property "sonar.organization", "cooperative0zero"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.coverage.jacoco.xmlReportPaths", "build/jacoco/test/jacocoTestReport.xml"
+        property "sonar.coverage.jacoco.xmlReportPath", "${buildDir}/reports/jacoco.xml"
     }
 }
 jacocoTestReport {
