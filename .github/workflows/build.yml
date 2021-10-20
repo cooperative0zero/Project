@@ -30,9 +30,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle   
       - name: Build and analyze
-      uses: sonarsource/sonarcloud-github-action@master
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    JAVA_HOME: '' # Avoid 'java: not found' error
-  run: /.gradle/caches build sonarqube --info
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          JAVA_HOME: '' # Avoid 'java: not found' error
+        run: /.gradle/caches build sonarqube --info
