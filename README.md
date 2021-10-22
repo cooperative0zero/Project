@@ -1,1 +1,1 @@
-<h1 align=center size=20>Конвертер систем счисления</h1>
+<h1 align=center font-size=20>Конвертер систем счисления</h1>
